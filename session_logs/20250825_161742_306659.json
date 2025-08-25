@@ -1,0 +1,25 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful, honest, concise AI assistant. Always answer clearly and structure long answers with brief bullets when helpful."
+    },
+    {
+      "role": "user",
+      "content": "Answer the user's question directly and briefly.\nQuestion: hi\nAnswer:"
+    }
+  ],
+  "output": "[Error calling model: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable]",
+  "feedback": {
+    "ts": "2025-08-25T16:17:42.293841",
+    "function": "qa",
+    "prompt_label": "Direct factual Q",
+    "original_prompt": "Answer the user's question directly and briefly.\nQuestion: hi\nAnswer:",
+    "adapted_prompt": "Answer the user's question directly and briefly.\nQuestion: hi\nAnswer: Keep the response under 150 words. Provide 1 relevant example if applicable. Use up to five short bullet points if listing items. Address this user note explicitly: 'no'.",
+    "helpful": false,
+    "comment": "no",
+    "output_preview": "[Error calling model: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable]"
+  },
+  "model": "gpt-4o-mini",
+  "demo_mode": false
+}

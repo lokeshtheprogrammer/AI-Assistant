@@ -1,0 +1,73 @@
+{
+  "system_base": "You are a helpful, honest, concise AI assistant. Always answer clearly and structure long answers with brief bullets when helpful.",
+  "functions": {
+    "qa": {
+      "name": "Answer Questions",
+      "description": "Answer factual or explainer-style questions with citations when possible.",
+      "prompts": [
+        {
+          "label": "Direct factual Q",
+          "template": "Answer the user's question directly and briefly.\nQuestion: {question}\nAnswer:",
+          "notes": "Short, direct answer. Use 1-3 sentences."
+        },
+        {
+          "label": "Explain like I'm 12",
+          "template": "Explain this like I'm 12 years old. Avoid jargon, use a friendly tone.\nTopic: {question}\nExplanation:",
+          "notes": "Simplified, friendly tone."
+        },
+        {
+          "label": "Three key facts",
+          "template": "Provide exactly three key facts in bullet points.\nTopic: {question}\n- ",
+          "notes": "Enforce exactly three bullets."
+        }
+      ]
+    },
+    "summarize": {
+      "name": "Summarize Text",
+      "description": "Summarize articles, passages, or documents at different granularities.",
+      "prompts": [
+        {
+          "label": "One-sentence gist",
+          "template": "Summarize the following text in one clear sentence.\nText:\n{content}\nSummary:",
+          "notes": "Single sentence."
+        },
+        {
+          "label": "Key points (5 bullets max)",
+          "template": "Summarize into up to five concise bullet points.\nText:\n{content}\nBullets:\n- ",
+          "notes": "Max 5 bullets; keep each short."
+        },
+        {
+          "label": "Executive brief (100 words)",
+          "template": "Write an executive summary (~100 words), covering purpose, methods, and conclusions if present.\nText:\n{content}\nExecutive summary:",
+          "notes": "Approx 100 words."
+        }
+      ]
+    },
+    "creative": {
+      "name": "Generate Creative Content",
+      "description": "Stories, poems, and ideas with adjustable tone and constraints.",
+      "prompts": [
+        {
+          "label": "Short story prompt",
+          "template": "Write a 150-200 word short story about: {prompt}. Keep it vivid but concise. End with a twist.",
+          "notes": "150–200 words, twist ending."
+        },
+        {
+          "label": "Poem prompt",
+          "template": "Write a 12-line free-verse poem about: {prompt}. Avoid rhyme; focus on imagery.",
+          "notes": "12 lines, free verse."
+        },
+        {
+          "label": "Idea generator",
+          "template": "Generate five high-concept ideas with 1-sentence loglines in the {genre} genre.\n- ",
+          "notes": "Exactly five ideas; genre variable."
+        }
+      ]
+    }
+  },
+  "feedback_rules": [
+    "If feedback is 'no', increase specificity by adding constraints (length, structure, examples).",
+    "If users ask for depth, raise detail level and include sources or definitions.",
+    "If users ask for brevity, reduce word count and tighten phrasing."
+  ]
+}
